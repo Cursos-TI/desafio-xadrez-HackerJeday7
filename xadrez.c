@@ -1,28 +1,33 @@
 #include <stdio.h>
 
+// Constantes para quantidade de movimentos
+#define BISPO_MOV 5
+#define TORRE_MOV 5
+#define RAINHA_MOV 8
+
 int main() {
-    // Posição inicial do Bispo no tabuleiro (linha e coluna)
-    int linha = 0;
-    int coluna = 0;
+    int i;
 
-    // Contador para controlar o número de movimentos
-    int movimentos = 0;
-
-    // O Bispo deve se mover 5 casas na diagonal superior direita
-    while (movimentos < 5) {
-        // Atualiza a posição do Bispo
-        linha++;
-        coluna++;
-
-        // Exibe a direção do movimento
-        printf("Movendo para a diagonal superior direita: linha %d, coluna %d\n", linha, coluna);
-
-        // Incrementa o contador de movimentos
-        movimentos++;
+    // Movimentação do Bispo (diagonal superior direita = Cima + Direita)
+    printf("Movimentação do Bispo:\n");
+    for (i = 0; i < BISPO_MOV; i++) {
+        printf("Cima\n");
+        printf("Direita\n");
     }
 
-    // Mensagem final
-    printf("O Bispo completou 5 movimentos na diagonal superior direita.\n");
+    // Movimentação da Torre (direita)
+    printf("\nMovimentação da Torre:\n");
+    while (i < BISPO_MOV + TORRE_MOV) {
+        printf("Direita\n");
+        i++;
+    }
+
+    // Movimentação da Rainha (esquerda)
+    printf("\nMovimentação da Rainha:\n");
+    do {
+        printf("Esquerda\n");
+        i++;
+    } while (i < BISPO_MOV + TORRE_MOV + RAINHA_MOV);
 
     return 0;
 }
