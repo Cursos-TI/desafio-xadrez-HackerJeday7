@@ -4,6 +4,8 @@
 #define BISPO_MOV 5
 #define TORRE_MOV 5
 #define RAINHA_MOV 8
+#define CAVALO_MOV_BAIXO 2
+#define CAVALO_MOV_ESQUERDA 1
 
 int main() {
     int i;
@@ -29,8 +31,27 @@ int main() {
         i++;
     } while (i < BISPO_MOV + TORRE_MOV + RAINHA_MOV);
 
+    // Movimentação do Cavalo (2 para baixo, 1 para esquerda)
+    // Utilizando loops aninhados: for externo, while interno
+    printf("\nMovimentação do Cavalo:\n");
+
+    int cavaloMovimentos = 3; // Número de vezes que o cavalo fará o movimento em "L"
+    for (int j = 0; j < cavaloMovimentos; j++) {
+        int k = 0;
+
+        // Movimento vertical (2 casas para baixo)
+        while (k < CAVALO_MOV_BAIXO) {
+            printf("Baixo\n");
+            k++;
+        }
+
+        // Movimento horizontal (1 casa para esquerda)
+        printf("Esquerda\n");
+    }
+
     return 0;
 }
+
 
 
 
